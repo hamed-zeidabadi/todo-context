@@ -5,20 +5,20 @@ export const initState = {
   isDark: false,
 };
 
-export const reducer = (state = initState, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case themeAction.LIGHT:
       return {
         ...state,
         isDark: false,
       };
-    case themeAction.LIGHT:
+    case themeAction.DARK:
       return {
         ...state,
         isDark: true,
       };
 
     default:
-      return state;
+      return initState;
   }
 };

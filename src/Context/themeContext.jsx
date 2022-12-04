@@ -2,31 +2,31 @@ import React, { useContext, useReducer } from "react";
 import { reducer, initState } from "./reduser";
 
 //craete context
-const themeContext = React.createContext();
-const themeDispatcher = React.createContext();
+const ThemeContext = React.createContext();
+const ThemeDispatcher = React.createContext();
 
 //create provider
-export const themeProvider = ({ children }) => {
+export const ThemeProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initState);
   return (
-    <themeContext.Provider value={state}>
-      <themeDispatcher.Provider value={dispatch}>
+    <ThemeContext.Provider value={state}>
+      <ThemeDispatcher.Provider value={dispatch}>
         {children}
-      </themeDispatcher.Provider>
-    </themeContext.Provider>
+      </ThemeDispatcher.Provider>
+    </ThemeContext.Provider>
   );
 };
 
 //create custom hooks
 export const useThemeState = () => {
-  const context = useContext(themeContext);
+  const context = useContext(ThemeContext);
   if (!context) {
     throw Error("must be use a themeContext");
   }
   return context;
 };
 export const useThemeDispatch = () => {
-  const context = useContext(themeDispatcher);
+  const context = useContext(ThemeDispatcher);
   if (!context) {
     throw Error("must be use a themeDispatcher");
   }
