@@ -8,7 +8,7 @@ const Theme = () => {
 
   const handleChengeTheme = () => {
     //Hard Code !
-    if (isDark == true) {
+    if (isDark === true) {
       document.body.style.backgroundColor = "white";
       document.body.style.color = "black";
       dispacth({

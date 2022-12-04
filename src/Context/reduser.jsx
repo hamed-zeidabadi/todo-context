@@ -1,4 +1,3 @@
-import { useReducer } from "react";
 import { themeAction } from "./themeActions";
 
 export const initState = {
